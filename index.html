@@ -1,0 +1,1795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LWB3QL2YNM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-LWB3QL2YNM');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protect Larry - Press Kit</title>
+    <link rel="icon" type="image/png" href="/tab_logo.png" sizes="300x300">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Neuton", serif;
+            line-height: 1.6;
+            color: #333;
+            background: radial-gradient(ellipse at center, #000000 0%, #001f3f 100%);
+            min-height: 100vh;
+        }
+
+        .video-banner {
+            position: relative;
+            width: 100%;
+            height: 60vh;
+            max-height: 600px;
+            min-height: 300px;
+            overflow: hidden;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-banner iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 56.25vw;
+            min-height: 100vh;
+            min-width: 177.77vh;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        .video-banner a {
+            position: relative;
+            z-index: 10;
+            display: inline-block;
+            cursor: pointer;
+            transition: transform 0.3s;
+            width: 45vw;
+            max-width: 497px;
+        }
+
+        .video-banner a:hover {
+            transform: scale(1.05);
+        }
+
+        .video-banner img {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8));
+        }
+
+        /* Portrait mode (mobile phones) - smaller logo */
+        @media (max-aspect-ratio: 1/1) {
+            .video-banner a {
+                width: 54vw;
+                max-width: 270px;
+            }
+        }
+
+        /* Very narrow portrait (typical phones) - even smaller logo */
+        @media (max-aspect-ratio: 9/16) {
+            .video-banner a {
+                width: 58.5vw;
+                max-width: 252px;
+            }
+        }
+
+        nav {
+            background: linear-gradient(to right, #666666 0%, #4169e1 20%, #4169e1 80%, #666666 100%);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 16px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav ul li {
+            margin: 0 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            font-size: 2rem;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: #001f3f;
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1560px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .page-section {
+            display: none;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        .home-layout {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 40px;
+        }
+
+        .page-nav {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 8px;
+            border: 2px solid #4169e1;
+            position: sticky;
+            top: 80px;
+            height: fit-content;
+        }
+
+        .page-nav h3 {
+            color: #4169e1;
+            font-size: 1.86rem;
+            margin-bottom: 20px;
+            border-bottom: 2.4px solid #4169e1;
+            padding-bottom: 10px;
+        }
+
+        .page-nav a {
+            display: block;
+            color: #4169e1;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.43rem;
+            padding: 5px 0;
+            transition: color 0.3s;
+        }
+
+        .page-nav a:hover {
+            color: #6495ed;
+        }
+
+        .download-all-images-btn:hover {
+            background: #6495ed !important;
+        }
+
+        .press-kit-layout {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: auto;
+        }
+
+        .fact-sheet {
+            background: #f0f5ff;
+            padding: 30px;
+            border-radius: 8px;
+            border: 3px solid #4169e1;
+            float: left;
+            width: 350px;
+            margin-right: 40px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .fact-sheet h2 {
+            color: #4169e1;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #4169e1;
+            padding-bottom: 5px;
+        }
+
+        .fact-sheet h3 {
+            color: #4169e1;
+            font-size: 1.656rem;
+            margin-top: 17.5px;
+            margin-bottom: 2px;
+        }
+
+        .fact-item {
+            margin-bottom: 10.5px;
+        }
+
+        .fact-item strong {
+            display: block;
+            color: #4169e1;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-bottom: 3px;
+        }
+
+        .fact-item p {
+            margin: 0;
+            font-size: 1.38rem;
+        }
+
+        .fact-item p strong {
+            display: inline;
+            color: #333;
+            font-size: inherit;
+            text-transform: none;
+            margin-bottom: 0;
+        }
+
+        .platform-item {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .platform-item:hover {
+            opacity: 0.8;
+        }
+
+        .platform-logo {
+            height: 33px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .engine-logo {
+            height: 33px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .platform-item span {
+            font-size: 1.38rem;
+            font-family: Arial, sans-serif;
+            color: #D4AF37;
+            font-weight: 600;
+        }
+
+        .main-content h2 {
+            color: #4169e1;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #4169e1;
+            padding-bottom: 5px;
+        }
+
+        .video-embed {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            margin: 30px 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
+
+        .game-description {
+            font-size: 1.38rem;
+            line-height: 1.44;
+            margin-bottom: 20px;
+        }
+
+        #features .game-description {
+            font-size: 1.5249rem;
+            margin-bottom: 5px;
+        }
+
+        #about-game {
+            clear: left;
+        }
+
+        .video-link {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #4169e1;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .video-link:hover {
+            background: #6495ed;
+        }
+
+        section {
+            background: white;
+            margin: 40px 0;
+            padding: 30px 40px 60px 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        section h2 {
+            color: #4169e1;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #4169e1;
+            padding-bottom: 10px;
+        }
+
+        section h3 {
+            color: #4169e1;
+            font-size: 1.8rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        section p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .studio-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: nowrap;
+        }
+
+        .studio-logo {
+            width: 100px;
+            height: auto;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .studio-info p {
+            margin: 0;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 32px;
+            border: 6px solid #4169e1;
+            border-radius: 8px;
+            max-width: 500px;
+            margin: 40px auto;
+        }
+
+        .team-member-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4169e1 0%, #6495ed 100%);
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3.5rem;
+            font-weight: bold;
+        }
+
+        .team-member h3 {
+            color: #4169e1;
+            font-size: 2rem;
+            margin-bottom: 7px;
+        }
+
+        .team-member .role {
+            color: #6495ed;
+            font-weight: 600;
+            font-size: 1.56rem;
+            margin-bottom: 20px;
+        }
+
+        .team-member p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        .screenshots-grid, .logos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .gifs-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .gifs-grid .screenshot-item {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .logos-grid {
+            margin-bottom: 40px;
+        }
+
+        .screenshot-placeholder {
+            background: linear-gradient(135deg, #4169e1 0%, #6495ed 100%);
+            height: 250px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .screenshot-item {
+            position: relative;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            display: block;
+        }
+
+        .screenshot-item:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+
+        .screenshot-download-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(65, 105, 225, 0.9);
+            border: none;
+            border-radius: 5px;
+            padding: 0;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+        }
+
+        .screenshot-download-btn img {
+            width: 40px;
+            height: 40px;
+            display: block;
+        }
+
+        .screenshot-download-btn:hover {
+            background: rgba(100, 149, 237, 1);
+            transform: scale(1.1);
+        }
+
+        .logo-item {
+            position: relative;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .logo-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            display: block;
+        }
+
+        .logo-item:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+
+        /* Lightbox Modal */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            font-size: 3rem;
+            padding: 20px 25px;
+            cursor: pointer;
+            transition: background 0.3s;
+            border-radius: 5px;
+            user-select: none;
+        }
+
+        .lightbox-arrow:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .lightbox-arrow.prev {
+            left: 20px;
+        }
+
+        .lightbox-arrow.next {
+            right: 20px;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 60px;
+            color: white;
+            font-size: 5.25rem;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .lightbox-close:hover {
+            opacity: 0.7;
+        }
+
+        .lightbox-download-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(65, 105, 225, 0.9);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 15px;
+            font-weight: 600;
+            font-size: 1.375rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            z-index: 10;
+        }
+
+        .lightbox-download-btn img {
+            width: 36px;
+            height: 36px;
+            display: block;
+        }
+
+        .lightbox-download-btn:hover {
+            background: rgba(100, 149, 237, 1);
+            transform: scale(1.05);
+        }
+
+        .download-section {
+            background: transparent;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .download-section h3 {
+            color: #4169e1;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #4169e1;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 5px 10px 0;
+            font-weight: 600;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-family: "Neuton", serif;
+            box-sizing: border-box;
+            line-height: 1.6;
+            vertical-align: middle;
+        }
+
+        .download-btn:hover {
+            background: #6495ed;
+            transform: scale(1.1);
+        }
+
+        .contact-box-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 30px auto;
+            max-width: 100%;
+            padding: 0 20px;
+        }
+
+        .contact-side-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contact-side-image {
+            width: 250px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .contact-email-simple {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .contact-email-simple a {
+            color: black;
+            text-decoration: underline;
+            font-weight: 600;
+            font-size: 2.5rem;
+        }
+
+        .contact-email-simple a:hover {
+            opacity: 0.7;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #4169e1 0%, #6495ed 100%);
+            border-radius: 50%;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            transition: transform 0.3s;
+            font-size: 1.5rem;
+        }
+
+        .social-link:hover {
+            transform: scale(1.1);
+        }
+
+        .info-section {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .info-section h3 {
+            color: #4169e1;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .info-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: #4169e1;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+        }
+
+        .neuton-extralight {
+            font-family: "Neuton", serif;
+            font-weight: 200;
+            font-style: normal;
+        }
+
+        .neuton-light {
+            font-family: "Neuton", serif;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        .neuton-regular {
+            font-family: "Neuton", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .neuton-bold {
+            font-family: "Neuton", serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .neuton-extrabold {
+            font-family: "Neuton", serif;
+            font-weight: 800;
+            font-style: normal;
+        }
+
+        .neuton-regular-italic {
+            font-family: "Neuton", serif;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        @media (max-width: 1024px) {
+            .home-layout {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .page-nav {
+                position: static;
+            }
+
+            /* Make the sticky container also non-sticky on smaller screens */
+            .home-layout > div[style*="position: sticky"] {
+                position: static !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .video-banner {
+                height: 35vh;
+                min-height: 200px;
+                max-height: 350px;
+            }
+
+            .page-nav h3 {
+                font-size: 1.69rem;
+            }
+
+            .page-nav a {
+                font-size: 1.3rem;
+                padding: 4px 0;
+            }
+
+            nav ul {
+                padding: 10px 5px;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+            }
+
+            nav ul li {
+                margin: 0 8px;
+                white-space: nowrap;
+            }
+
+            nav ul li a {
+                font-size: 1.7rem;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .press-kit-layout {
+                padding: 20px 15px;
+            }
+
+            .fact-sheet {
+                padding: 20px;
+                float: none;
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 30px;
+            }
+
+            .fact-sheet h2 {
+                font-size: 1.5rem;
+            }
+
+            .fact-sheet h3 {
+                font-size: 1.524rem;
+                margin-top: 14px;
+                margin-bottom: 2px;
+            }
+
+            .fact-item p {
+                font-size: 1.27rem;
+            }
+
+            .platform-logo {
+                height: 29px;
+            }
+
+            .engine-logo {
+                height: 29px;
+            }
+
+            .platform-item span {
+                font-size: 1.27rem;
+            }
+
+            .main-content h2 {
+                font-size: 1.8rem;
+            }
+
+
+            .game-description {
+                font-size: 1.15rem;
+            }
+
+            #features .game-description {
+                font-size: 1.27075rem;
+                margin-bottom: 5px;
+            }
+
+            .video-link {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
+
+            footer {
+                padding: 20px 15px;
+                font-size: 0.9rem;
+            }
+
+            section {
+                padding: 20px 20px 30px 20px;
+                margin: 20px 0;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+                margin-bottom: 20px;
+            }
+
+            section h3 {
+                font-size: 1.4rem;
+                margin-top: 20px;
+            }
+
+            section p {
+                font-size: 1rem;
+            }
+
+            .studio-logo {
+                width: 60px;
+            }
+
+            .studio-info {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .studio-info p {
+                font-size: 1rem;
+                white-space: normal;
+                text-align: center;
+            }
+
+            .team-member {
+                padding: 25px 15px;
+                margin: 30px auto;
+            }
+
+            .team-member-photo {
+                width: 120px;
+                height: 120px;
+                font-size: 2.5rem;
+            }
+
+            .team-member h3 {
+                font-size: 1.5rem;
+            }
+
+            .team-member .role {
+                font-size: 1rem;
+            }
+
+            .team-member p {
+                font-size: 0.95rem;
+            }
+
+            .screenshots-grid, .logos-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .gifs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .screenshot-download-btn {
+                width: 35px;
+                height: 35px;
+                padding: 0;
+            }
+
+            .screenshot-download-btn img {
+                width: 35px;
+                height: 35px;
+            }
+
+            .download-section {
+                padding: 20px;
+            }
+
+            .download-section h3 {
+                font-size: 1.4rem;
+            }
+
+            .download-btn {
+                padding: 12px 20px;
+                font-size: 1.3rem;
+                margin: 10px 2px;
+            }
+
+            .contact-box-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .contact-side-wrapper {
+                flex: none;
+            }
+
+            .contact-side-image {
+                width: 187px;
+            }
+
+            .contact-email-simple a {
+                font-size: 1.5rem;
+            }
+
+            .social-link {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+
+            .info-section {
+                padding: 20px;
+            }
+
+            .info-section h3 {
+                font-size: 1.4rem;
+            }
+
+            .info-section p {
+                font-size: 1rem;
+            }
+
+            .lightbox-download-btn {
+                top: 10px;
+                right: 10px;
+                padding: 6px 12px;
+                font-size: 1.2375rem;
+                gap: 10px;
+            }
+
+            .lightbox-download-btn img {
+                width: 30px;
+                height: 30px;
+            }
+
+            .lightbox-close {
+                top: 15px;
+                right: 50px;
+                font-size: 4.375rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="video-banner">
+        <iframe
+            src="https://www.youtube.com/embed/RcE1ArX_6H8?autoplay=1&mute=1&loop=1&playlist=RcE1ArX_6H8&controls=0"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+        <a href="https://store.steampowered.com/app/3189670/Protect_Pine_Valley/" target="_blank">
+            <img src="logo_0.png" alt="Protect Larry Logo">
+        </a>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="#press-kit" class="nav-link" data-page="press-kit">Press Kit</a></li>
+            <li><a href="#contact" class="nav-link" data-page="contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- PRESS KIT PAGE -->
+    <div id="press-kit-page" class="page-section">
+        <div class="container">
+            <div class="home-layout">
+                <!-- Page Navigation Sidebar -->
+                <div style="position: sticky; top: 80px; height: fit-content;">
+                    <aside class="page-nav" style="position: static; margin-bottom: 20px;">
+                        <h3>Jump To</h3>
+                        <a href="#trailer">Videos</a>
+                        <a href="#pitch">Fact Sheet</a>
+                        <a href="#gifs">GIFs</a>
+                        <a href="#screenshots">Screenshots</a>
+                        <a href="#logos">Logos</a>
+                    </aside>
+                    <button class="download-all-images-btn" onclick="downloadAllImagesZip(event)" style="width: 200px; padding: 8.4px 12px; background: #4169e1; color: white; border: none; border-radius: 5px; font-weight: 600; font-size: 1.485rem; cursor: pointer; font-family: 'Neuton', serif; transition: background 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                        <img src="download_symbol.png" alt="Download" style="width: 38.64px; height: 38.64px; flex-shrink: 0;">
+                        <span style="line-height: 1;">All Images</span>
+                    </button>
+                </div>
+
+                <!-- Main Content Area -->
+                <div>
+                    <!-- VIDEOS SECTION -->
+                    <section id="trailer" style="margin-top: 0;">
+                        <h2>Videos</h2>
+                        <div class="video-section">
+                            <div class="video-embed">
+                                <iframe
+                                    src="https://player.vimeo.com/video/1133944640?badge=0&autopause=0&player_id=0&app_id=58479"
+                                    frameborder="0"
+                                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                            <div class="download-section">
+                                <a href="https://vimeo.com/1133944640" class="download-btn" target="_blank">Download on Vimeo</a>
+                                <button class="download-btn" onclick="copyEmbedCode()">&lt;Copy Embed Code&gt;</button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div class="press-kit-layout">
+                        <aside class="fact-sheet">
+                            <h2>Fact Sheet</h2>
+
+                            <h3>Developer & Publisher</h3>
+                    <div class="fact-item">
+                        <p>BoomTown Snipes, LLC</p>
+                    </div>
+
+                    <h3>Release Date</h3>
+                    <div class="fact-item">
+                        <p>TBA 2026</p>
+                    </div>
+
+                    <h3>Platform</h3>
+                    <div class="fact-item">
+                        <a href="https://store.steampowered.com/app/3189670/Protect_Pine_Valley/" target="_blank" class="platform-item">
+                            <img src="steam_logo.png" alt="Steam" class="platform-logo">
+                        </a>
+                    </div>
+
+                    <h3>Genre</h3>
+                    <div class="fact-item">
+                        <p>• Real-Time Tactics</p>
+                        <p>• Action</p>
+                        <p>• Strategy</p>
+                    </div>
+
+                    <h3>Team</h3>
+                    <div class="fact-item">
+                        <p><strong>Matt Russiello</strong> (Developer)</p>
+                    </div>
+
+                    <h3>Engine</h3>
+                    <div class="fact-item">
+                        <img src="unity_logo.png" alt="Unity" class="engine-logo">
+                    </div>
+                </aside>
+
+                <main class="main-content">
+                    <div id="pitch">
+                        <h2>Pitch</h2>
+                        <p class="game-description">
+                            Seamlessly switch between commanding your troops from above or fighting alongside them on the front lines. Advance through large-scale battles, upgrade existing units or recruit new ones along the way. How you build your army depends on where you lead it - as different battlefields grant access to different units and rewards.
+                        </p>
+                    </div>
+
+                    <div id="short-descriptions">
+                        <h2>Blurbs</h2>
+                        <p class="game-description">
+                            Experience the chaos of battle through different perspectives - from the vulnerability of a foot soldier to the overwhelming strength of a rock golem. Each unit has its own mass and strength, allowing them to push or be pushed by others, causing the front lines to shift dynamically.
+                        </p>
+                        <p class="game-description">
+                            Stay above the fray and let your soldiers do the work. Use commander abilities to influence the battle - spread out a crowd with a tornado or delete some enemies with a meteor shower.
+                        </p>
+                        <p class="game-description">
+                            Each battlefield environment offers different rewards. Plan your route carefully - the terrain you fight on determines the units and abilities you'll unlock.
+                        </p>
+                    </div>
+
+                    <div id="features">
+                        <h2>Features</h2>
+                        <p class="game-description">• Custom Battle Mode</p>
+                        <p class="game-description">• Strategy Campaign with persistent upgrades across runs</p>
+                        <p class="game-description">• Large-scale battles with thousands of units</p>
+                    </div>
+
+                    <div id="about-game">
+                        <h2>Description</h2>
+
+                        <p class="game-description">
+                            Protect Larry is a strategy game where you lead your army through a series of battles across different environments. During each battle, you're free to switch back and forth between two modes. In commander mode, you can survey the field from above and issue tactical orders to your troops. Or, you can enter the fray yourself in soldier mode, taking control of any of your units from a third-person perspective to turn the tide firsthand.
+                        </p>
+
+                        <p class="game-description">
+                            Each run plays out across a branching map of possible battlefields. After each victory, you might be able to upgrade your troops, recruit new units, or unlock new abilities and bonuses for both commander and soldier modes. Be careful when plotting your path - the environment for each battle can influence the rewards and opportunities that await you.
+                        </p>
+
+                        <p class="game-description">
+                            Protect Larry lets you approach each run in your own way. You can complete the game entirely from the commander's vantage or fight every battle firsthand in soldier mode or switch between the two as the situation demands. As you progress, you'll shape your own path of upgrades and advantages - maybe enhancing the units you control in soldier mode, or unlocking abilities that can only be used in commander mode. How you choose to fight - and how you choose to Protect Larry - is entirely up to you.
+                        </p>
+                    </div>
+
+                    <div id="history">
+                        <h2>History</h2>
+                        <p class="game-description">
+                            Protect Larry has been in development since late 2023. Beginning as a side project, it became the developer's full time focus in early 2025.
+                        </p>
+                    </div>
+                </main>
+            </div>
+
+            <!-- GIFS SECTION -->
+            <section id="gifs">
+                <h2>GIFs</h2>
+
+                <div class="screenshots-grid gifs-grid">
+                    <!-- GIFs loaded dynamically via JavaScript -->
+                </div>
+
+                <div class="download-section">
+                    <a href="#" class="download-btn" onclick="downloadGifsZip(event)">Download All GIFs (ZIP)</a>
+                </div>
+            </section>
+
+            <!-- SCREENSHOTS SECTION -->
+            <section id="screenshots">
+                <h2>Screenshots</h2>
+
+                <div class="screenshots-grid">
+                    <!-- Screenshots loaded dynamically via JavaScript -->
+                </div>
+
+                <div class="download-section">
+                    <a href="#" class="download-btn" onclick="downloadScreenshotsZip(event)">Download All Screenshots (ZIP)</a>
+                </div>
+            </section>
+
+            <!-- LOGOS SECTION -->
+            <section id="logos">
+                <h2>Logos and Capsules</h2>
+
+                <div class="logos-grid marketing-images-grid">
+                    <!-- Marketing images loaded dynamically via JavaScript -->
+                </div>
+
+                <div class="download-section">
+                    <a href="#" class="download-btn" onclick="downloadMarketingImagesZip(event)">Download All Logos and Capsules (ZIP)</a>
+                </div>
+            </section>
+
+            <!-- PERMISSIONS SECTION -->
+            <section>
+                <h2 style="text-align: center;">Permissions</h2>
+                <p style="font-size: 1.8rem; line-height: 1.8; text-align: center;">
+                    All the images, videos, and texts on this page are licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" style="color: #4169e1; text-decoration: underline;">CC BY 4.0</a>.
+                </p>
+            </section>
+                </div> <!-- End main content area -->
+            </div> <!-- End home-layout -->
+        </div> <!-- End container -->
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contact-page" class="page-section">
+        <div class="container">
+            <section>
+                <h2>Get In Touch</h2>
+
+                <div class="contact-box-container">
+                    <div class="contact-side-wrapper">
+                        <img src="contact_pic_left.png" alt="Contact Left" class="contact-side-image">
+                    </div>
+                    <div class="contact-email-simple">
+                        <a href="mailto:support@boomtownsnipes.com">support@boomtownsnipes.com</a>
+                    </div>
+                    <div class="contact-side-wrapper">
+                        <img src="contact_pic_right.png" alt="Contact Right" class="contact-side-image">
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <button class="lightbox-arrow prev" onclick="changeImage(-1)">&#10094;</button>
+        <div class="lightbox-content">
+            <button class="lightbox-download-btn" id="lightbox-download-btn" onclick="downloadCurrentImage()">
+                <img src="download_symbol.png" alt="Download">
+                <span>Download</span>
+            </button>
+            <img id="lightbox-img" src="" alt="">
+        </div>
+        <button class="lightbox-arrow next" onclick="changeImage(1)">&#10095;</button>
+    </div>
+
+    <footer>
+        <p style="font-size: 1.5rem;">Contact: <a href="mailto:support@boomtownsnipes.com" style="color: white;">support@boomtownsnipes.com</a></p>
+    </footer>
+
+    <script>
+        // Navigation handling
+        const navLinks = document.querySelectorAll('.nav-link');
+        const pageSections = document.querySelectorAll('.page-section');
+
+        function showPage(pageName) {
+            // Hide all pages
+            pageSections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show selected page
+            const targetPage = document.getElementById(`${pageName}-page`);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+
+            // Update active nav link
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.dataset.page === pageName) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Update URL without reload
+            history.pushState({ page: pageName }, '', `#${pageName}`);
+        }
+
+        // Click handlers for navigation
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const pageName = link.dataset.page;
+                showPage(pageName);
+
+                // Scroll to top of content (below video banner and nav) only on click
+                const nav = document.querySelector('nav');
+                const videoBanner = document.querySelector('.video-banner');
+                const scrollPosition = videoBanner.offsetHeight + nav.offsetHeight;
+                window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
+            });
+        });
+
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', (e) => {
+            if (e.state && e.state.page) {
+                showPage(e.state.page);
+            } else {
+                // Default to press-kit if no state
+                const hash = window.location.hash.slice(1);
+                showPage(hash || 'press-kit');
+            }
+        });
+
+        // Handle initial page load with hash - use DOMContentLoaded for faster initial load
+        document.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash.slice(1);
+            if (hash && ['press-kit', 'welcome', 'media', 'contact'].includes(hash)) {
+                showPage(hash);
+            } else {
+                showPage('press-kit');
+            }
+        });
+
+        // Dynamic screenshot loading
+        // Add or remove filenames from this array to update screenshots
+        const screenshots = [
+            { file: 'screenshot_0.png', alt: 'Commander Mode View' },
+            { file: 'screenshot_1.png', alt: 'Soldier Combat' },
+            { file: 'screenshot_2.png', alt: 'Pine Valley Meadows' },
+            { file: 'screenshot_3.png', alt: 'Winter Battle' },
+            { file: 'screenshot_4.png', alt: 'Tornado Event' },
+            { file: 'screenshot_5.png', alt: 'Night Battle' },
+            { file: 'screenshot_6.png', alt: 'Battle Scene' },
+            { file: 'screenshot_7.png', alt: 'Phoenix' }
+        ];
+
+        // Dynamic gifs loading
+        const gifs = [
+            { file: 'jump.gif', alt: 'Jump Animation' },
+            { file: 'commander_to_soldier.gif', alt: 'Commander to Soldier Mode' },
+            { file: 'soldier_to_commander.gif', alt: 'Soldier to Commander Mode' },
+            { file: 'meadow_pan.gif', alt: 'Meadow Pan' }
+        ];
+
+        // Dynamic marketing images (logos and capsules) loading
+        const marketingImages = [
+            { file: 'logo_0.png', alt: 'Game Logo' },
+            { file: 'boomtownsnipes_logo.png', alt: 'BoomTown Snipes Logo' }
+        ];
+
+        // Combine all images for lightbox functionality
+        let allImages = [];
+
+        // Generate gifs grid FIRST (to match page order in lightbox)
+        const gifsGrid = document.querySelector('.gifs-grid');
+        gifs.forEach((gif, index) => {
+            allImages.push({ src: `gifs/${gif.file}`, alt: gif.alt });
+
+            // Create container div
+            const container = document.createElement('div');
+            container.className = 'screenshot-item';
+
+            // Create image
+            const img = document.createElement('img');
+            img.src = `gifs/${gif.file}`;
+            img.alt = gif.alt;
+            img.onclick = () => openLightbox(index);
+
+            // Create download button
+            const downloadBtn = document.createElement('button');
+            downloadBtn.className = 'screenshot-download-btn';
+            const downloadIcon = document.createElement('img');
+            downloadIcon.src = 'download_symbol.png';
+            downloadIcon.alt = 'Download';
+            downloadBtn.appendChild(downloadIcon);
+            downloadBtn.onclick = (e) => {
+                e.stopPropagation(); // Prevent opening lightbox when clicking download
+                downloadImage(`gifs/${gif.file}`, gif.file);
+            };
+
+            container.appendChild(img);
+            container.appendChild(downloadBtn);
+            gifsGrid.appendChild(container);
+        });
+
+        // Generate screenshot grid SECOND
+        const screenshotsGrid = document.querySelector('.screenshots-grid:not(.gifs-grid)');
+        screenshots.forEach((screenshot, index) => {
+            const screenshotIndex = allImages.length;
+            allImages.push({ src: `screenshots/${screenshot.file}`, alt: screenshot.alt });
+
+            // Create container div
+            const container = document.createElement('div');
+            container.className = 'screenshot-item';
+
+            // Create image
+            const img = document.createElement('img');
+            img.src = `screenshots/${screenshot.file}`;
+            img.alt = screenshot.alt;
+            img.onclick = () => openLightbox(screenshotIndex);
+
+            // Create download button
+            const downloadBtn = document.createElement('button');
+            downloadBtn.className = 'screenshot-download-btn';
+            const downloadIcon = document.createElement('img');
+            downloadIcon.src = 'download_symbol.png';
+            downloadIcon.alt = 'Download';
+            downloadBtn.appendChild(downloadIcon);
+            downloadBtn.onclick = (e) => {
+                e.stopPropagation(); // Prevent opening lightbox when clicking download
+                downloadImage(`screenshots/${screenshot.file}`, screenshot.file);
+            };
+
+            container.appendChild(img);
+            container.appendChild(downloadBtn);
+            screenshotsGrid.appendChild(container);
+        });
+
+        // Generate marketing images grid
+        const marketingImagesGrid = document.querySelector('.marketing-images-grid');
+        marketingImages.forEach((image, index) => {
+            const imgIndex = allImages.length;
+            allImages.push({ src: `marketing_images/${image.file}`, alt: image.alt });
+
+            // Create container div
+            const container = document.createElement('div');
+            container.className = 'logo-item';
+
+            // Create image
+            const img = document.createElement('img');
+            img.src = `marketing_images/${image.file}`;
+            img.alt = image.alt;
+            img.onclick = () => openLightbox(imgIndex);
+
+            // Create download button
+            const downloadBtn = document.createElement('button');
+            downloadBtn.className = 'screenshot-download-btn';
+            const downloadIcon = document.createElement('img');
+            downloadIcon.src = 'download_symbol.png';
+            downloadIcon.alt = 'Download';
+            downloadBtn.appendChild(downloadIcon);
+            downloadBtn.onclick = (e) => {
+                e.stopPropagation(); // Prevent opening lightbox when clicking download
+                downloadImage(`marketing_images/${image.file}`, image.file);
+            };
+
+            container.appendChild(img);
+            container.appendChild(downloadBtn);
+            marketingImagesGrid.appendChild(container);
+        });
+
+        // Lightbox functionality
+        let currentImageIndex = 0;
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            lightboxImg.src = allImages[index].src;
+            lightboxImg.alt = allImages[index].alt;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+
+        function changeImage(direction) {
+            currentImageIndex += direction;
+
+            // Loop around if at the beginning or end
+            if (currentImageIndex < 0) {
+                currentImageIndex = allImages.length - 1;
+            } else if (currentImageIndex >= allImages.length) {
+                currentImageIndex = 0;
+            }
+
+            lightboxImg.src = allImages[currentImageIndex].src;
+            lightboxImg.alt = allImages[currentImageIndex].alt;
+        }
+
+        // Close lightbox when clicking outside the image
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.classList.contains('active')) {
+                if (e.key === 'ArrowLeft') {
+                    changeImage(-1);
+                } else if (e.key === 'ArrowRight') {
+                    changeImage(1);
+                } else if (e.key === 'Escape') {
+                    closeLightbox();
+                }
+            }
+        });
+
+        // Handle section navigation within home page
+        document.querySelectorAll('.page-nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').slice(1); // Remove the #
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    const offsetTop = targetSection.getBoundingClientRect().top + window.pageYOffset - 50;
+                    window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Download individual image
+        async function downloadImage(imagePath, filename) {
+            try {
+                const response = await fetch(imagePath);
+                const blob = await response.blob();
+                saveAs(blob, filename);
+
+                // Send Google Analytics event
+                gtag('event', 'file_download', {
+                    'file_name': filename
+                });
+            } catch (error) {
+                console.error("Error downloading image:", error);
+                alert("Failed to download image. Please try again.");
+            }
+        }
+
+        // Download current lightbox image
+        function downloadCurrentImage() {
+            const currentImage = allImages[currentImageIndex];
+            const filename = currentImage.src.split('/').pop();
+            downloadImage(currentImage.src, filename);
+
+            // Send Google Analytics event
+            gtag('event', 'file_download', {
+                'file_name': filename
+            });
+        }
+
+        // Copy embed code to clipboard
+        function copyEmbedCode() {
+            const embedCode = '<iframe src="https://player.vimeo.com/video/1133944640?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="1920" height="1080" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="ProtectPineValley_Trailer"></iframe>';
+
+            navigator.clipboard.writeText(embedCode).then(() => {
+                alert('Embed code copied to clipboard!');
+            }).catch(err => {
+                console.error('Failed to copy embed code:', err);
+                alert('Failed to copy embed code. Please try again.');
+            });
+        }
+
+        // Download all screenshots as ZIP
+        async function downloadScreenshotsZip(event) {
+            event.preventDefault();
+
+            const zip = new JSZip();
+            const folder = zip.folder("screenshots");
+
+            // Show loading state
+            const btn = event.target;
+            const originalText = btn.textContent;
+            btn.textContent = "Creating ZIP...";
+            btn.style.pointerEvents = "none";
+
+            try {
+                // Fetch and add each screenshot to the zip
+                for (const screenshot of screenshots) {
+                    const response = await fetch(`screenshots/${screenshot.file}`);
+                    const blob = await response.blob();
+                    folder.file(screenshot.file, blob);
+                }
+
+                // Generate and download the zip file
+                const content = await zip.generateAsync({ type: "blob" });
+                saveAs(content, "protect-pine-valley-screenshots.zip");
+
+                // Send Google Analytics event
+                gtag('event', 'file_download', {
+                    'file_name': 'protect-pine-valley-screenshots.zip'
+                });
+
+                btn.textContent = originalText;
+                btn.style.pointerEvents = "auto";
+            } catch (error) {
+                console.error("Error creating zip:", error);
+                btn.textContent = "Error - Try Again";
+                btn.style.pointerEvents = "auto";
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                }, 2000);
+            }
+        }
+
+        // Download all marketing images (logos and capsules) as ZIP
+        async function downloadMarketingImagesZip(event) {
+            event.preventDefault();
+
+            const zip = new JSZip();
+            const folder = zip.folder("marketing_images");
+
+            // Show loading state
+            const btn = event.target;
+            const originalText = btn.textContent;
+            btn.textContent = "Creating ZIP...";
+            btn.style.pointerEvents = "none";
+
+            try {
+                // Fetch and add each marketing image to the zip
+                for (const image of marketingImages) {
+                    const response = await fetch(`marketing_images/${image.file}`);
+                    const blob = await response.blob();
+                    folder.file(image.file, blob);
+                }
+
+                // Generate and download the zip file
+                const content = await zip.generateAsync({ type: "blob" });
+                saveAs(content, "protect-pine-valley-marketing-images.zip");
+
+                // Send Google Analytics event
+                gtag('event', 'file_download', {
+                    'file_name': 'protect-pine-valley-marketing-images.zip'
+                });
+
+                btn.textContent = originalText;
+                btn.style.pointerEvents = "auto";
+            } catch (error) {
+                console.error("Error creating zip:", error);
+                btn.textContent = "Error - Try Again";
+                btn.style.pointerEvents = "auto";
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                }, 2000);
+            }
+        }
+
+        // Download all gifs as ZIP
+        async function downloadGifsZip(event) {
+            event.preventDefault();
+
+            const zip = new JSZip();
+            const folder = zip.folder("gifs");
+
+            // Show loading state
+            const btn = event.target;
+            const originalText = btn.textContent;
+            btn.textContent = "Creating ZIP...";
+            btn.style.pointerEvents = "none";
+
+            try {
+                // Fetch and add each gif to the zip
+                for (const gif of gifs) {
+                    const response = await fetch(`gifs/${gif.file}`);
+                    const blob = await response.blob();
+                    folder.file(gif.file, blob);
+                }
+
+                // Generate and download the zip file
+                const content = await zip.generateAsync({ type: "blob" });
+                saveAs(content, "protect-pine-valley-gifs.zip");
+
+                // Send Google Analytics event
+                gtag('event', 'file_download', {
+                    'file_name': 'protect-pine-valley-gifs.zip'
+                });
+
+                btn.textContent = originalText;
+                btn.style.pointerEvents = "auto";
+            } catch (error) {
+                console.error("Error creating zip:", error);
+                btn.textContent = "Error - Try Again";
+                btn.style.pointerEvents = "auto";
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                }, 2000);
+            }
+        }
+
+        // Download all images (screenshots, gifs, and logos) as ZIP
+        async function downloadAllImagesZip(event) {
+            event.preventDefault();
+
+            const zip = new JSZip();
+
+            // Create folders for each category
+            const screenshotsFolder = zip.folder("screenshots");
+            const gifsFolder = zip.folder("gifs");
+            const logosFolder = zip.folder("logos");
+
+            // Show loading state
+            const btn = event.target;
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<span style="line-height: 1;">Creating ZIP...</span>';
+            btn.style.pointerEvents = "none";
+
+            try {
+                // Fetch and add each screenshot to the zip
+                for (const screenshot of screenshots) {
+                    const response = await fetch(`screenshots/${screenshot.file}`);
+                    const blob = await response.blob();
+                    screenshotsFolder.file(screenshot.file, blob);
+                }
+
+                // Fetch and add each gif to the zip
+                for (const gif of gifs) {
+                    const response = await fetch(`gifs/${gif.file}`);
+                    const blob = await response.blob();
+                    gifsFolder.file(gif.file, blob);
+                }
+
+                // Fetch and add each logo/marketing image to the zip
+                for (const image of marketingImages) {
+                    const response = await fetch(`marketing_images/${image.file}`);
+                    const blob = await response.blob();
+                    logosFolder.file(image.file, blob);
+                }
+
+                // Generate and download the zip file
+                const content = await zip.generateAsync({ type: "blob" });
+                saveAs(content, "protect-pine-valley-all-images.zip");
+
+                // Send Google Analytics event
+                gtag('event', 'file_download', {
+                    'file_name': 'protect-pine-valley-all-images.zip'
+                });
+
+                btn.innerHTML = originalText;
+                btn.style.pointerEvents = "auto";
+            } catch (error) {
+                console.error("Error creating zip:", error);
+                btn.innerHTML = '<span style="line-height: 1;">Error - Try Again</span>';
+                btn.style.pointerEvents = "auto";
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                }, 2000);
+            }
+        }
+    </script>
+</body>
+</html>
